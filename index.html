@@ -12,7 +12,7 @@ Select ONE Additional
 [ no ] Feature 4 - Use .mouseover() method
 [ no ] Feature 5 - Use .fadeIn() method
 -->
-
+/*
 <!DOCTYPE html>
 <html>
   <head>
@@ -65,5 +65,82 @@ Select ONE Additional
     </script>
   </body>
 </html>
+*/
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 11 Project</title>
+
+    <style>
+      /* Five CSS Rules */
+      body { background-color: #f0f0f0; text-align: center; font-family: sans-serif; }
+      button { padding: 10px; margin: 10px; border-radius: 5px; cursor: pointer; }
+      img { width: 150px; height: 150px; display: none; margin-top: 10px; }
+      .highlight { font-weight: bold; font-style: italic; }
+      #mem1-button { background-color: yellow; }
+      #mem2-button { background-color: green; color: white; }
+      #mem3-button { background-color: purple; color: white; }
+    </style>
+  </head>
+  <body>
+    <button id="mem1-button">Yellow Flowers</button>
+    <button id="mem2-button">Green Flowers</button>
+    <button id="mem3-button">Purple Flowers</button>
+
+    <h1>My Top 3 Memories of <span class="highlight">Flowers</span></h1>
+    
+    <ol>
+      <li>
+        <h3 id="mem1">Memory #1</h3>
+        <p>Sunflowers are bright!</p>
+        <img class="flower-pic" src="https://wikimedia.org" alt="yellow flower">
+      </li>
+
+      <li>
+        <h3 id="mem2">Memory #2</h3>
+        <p>Bells of Ireland are green!</p>
+        <img class="flower-pic" src="https://wikimedia.org" alt="green flower">
+      </li>
+
+      <li>
+        <h3 id="mem3">Memory #3</h3>
+        <p>Lavender is purple!</p>
+        <img class="flower-pic" src="https://wikimedia.org" alt="purple flower">
+      </li>
+    </ol>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      // Selecting by Class (.) to hide images initially
+      $(".flower-pic").hide();
+
+      // ======================== Button #1 (ID Selector)
+      $("#mem1-button").click(function () {
+        $("#mem1").css("color", "orange"); // Method 1: .css()
+        $("#mem1").text("Beautiful Sunflowers"); // Method 2: .text()
+        $("img").first().show(); // Method 3: .show() (Element Selector)
+      });
+
+      // ======================== Button #2
+      $("#mem2-button").click(function () {
+        $("#mem2").css("color", "green");
+        $("#mem2").text("Green Bells");
+        $(".flower-pic").eq(1).show(); 
+      });
+
+      // ======================== Button #3
+      $("#mem3-button").click(function () {
+        $("#mem3").css("color", "purple");
+        $("#mem3").text("Lovely Lavender");
+        $(".flower-pic").last().show();
+      });
+    </script>
+  </body>
+</html>
+
 
 <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
